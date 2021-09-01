@@ -1,0 +1,135 @@
+/* Mobile and Tablet */
+@media (max-width: 1023px) {
+    .hide-on-moblet {
+        display: none;
+    }
+
+    :root {
+        --header-hight: 68px;
+        --navbar-hight: 0;
+        
+    }
+
+    .header {
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .header__cart {
+        width: 80px;
+        text-align: right;
+    }
+
+    .header__cart-list {
+        position: fixed;
+        top: var(--header-hight);
+        right: 0;
+        width: 100%;
+    }
+
+    .header__cart-list::after {
+        display: none;
+    }
+
+    .app__container {
+        margin-top: calc(var(--header-hight) + var(--header-sort-bar-hight));
+    }
+
+    .header__sort-bar {
+        display: flex;
+    }
+
+    .app__content {
+        padding-top: 8px;
+    }
+
+    .moblet-category {
+        display: block;
+    }
+}
+
+/*Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .hide-on-tablet {
+        display: none;
+    }
+
+    
+}
+
+/* Mobile*/
+@media (max-width: 739px) {
+    .hide-on-mobile {
+        display: none;
+    }
+    .header__mobile-search {
+        display: block;
+    }
+    .header-with-search {
+        justify-content: space-between;
+        line-height: 0;
+    }
+
+    .header__logo,
+    .header__cart {
+        width: unset;
+    }
+    .header__search {
+        position: fixed;
+        top: var(--header-hight);
+        z-index: 10;
+        left: 0;
+        width: 100%;
+        height: var(--header-sort-bar-hight);
+        padding: 0 16px;
+        animation: mobileSearchIn linear 0.4s;
+    }
+
+    .header__search-history {
+        position: fixed;
+        top: calc(var(--header-hight) + var(--header-sort-bar-hight));
+        left: 0;
+        width: 100%;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    @keyframes mobileSearchIn {
+        from {
+            opacity: 0;
+            top: calc(var(--header-hight) / 2);
+        }
+        to {
+            opacity: 1;
+            top: var(--header-hight);
+        }
+    }
+
+    .pagination-item {
+        margin: 0;
+    }
+    
+    .app__content {
+        margin: 0 4px;
+    }
+
+    .footer-policy {
+        margin: 16px 0;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .policy__icon {
+        margin: 0;
+    }
+
+    .policy__descr {
+        text-align: center;
+    }
+
+    .footer-about {
+        padding: 0 8px;
+    }
+}

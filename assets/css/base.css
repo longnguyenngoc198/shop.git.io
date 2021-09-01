@@ -1,0 +1,245 @@
+/* Khai bao bien */
+:root{
+    --while-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --primary-color: #fd5f32;
+    --border-color: #dbdbdb;
+
+    --header-hight: 120px;
+    --navbar-hight: 34px;
+    --header-search-hight: calc(var(--header-hight) - var(--navbar-hight));
+    --header-sort-bar-hight: 46px;
+}
+* {
+    /* kế thừa lại những thẻ chứa nó */
+    box-sizing: inherit; 
+}
+html {
+    /* font size la 10px */
+    font-size: 62.5%;
+    /* line height = 16px - độ cao mặc đinh của chữ*/
+    line-height: 1.6rem;
+    /* nhúng font */
+    font-family: 'Roboto', sans-serif;
+    /*  */
+    box-sizing: border-box;
+}
+/* Reposive - don gian responsive*/
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+/* test */
+.grid__column-2 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+}
+.grid__column-2-4{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+.grid__cloumn2-4--pad {
+    padding: 0 12px;
+}
+
+.grid__colum-4 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 33.3332%;
+}
+.grid__column-10 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3334%;
+}
+/* end test */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    display: none;
+}
+.modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    animation: fadeIn linear 0.3s;
+}
+.moda__body {
+    margin: auto;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+    position: relative;
+    z-index: 1;
+    animation: modalFadeIn linear 0.3s;
+}
+/* authem btn */
+.btn {
+    min-width: 124px;
+    height: 34px;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    padding: 0;
+    line-height: 1.6rem;
+    cursor: pointer;
+    outline: none;
+    background-color: var(--while-color);
+    color: var(--text-color);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
+}
+
+.btn.btn-sizeS {
+    height: 32px;
+    font-size: 1.2rem;
+    padding: 0 8px;
+}
+
+.btn.btn--primary {
+    background-color: var(--primary-color);
+    color: var(--while-color);
+}
+
+/* slection */
+.select-input {
+    position: relative;
+    margin-left: 5px;
+    background: var(--while-color);
+    width: 200px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.select-input__label {
+    margin-left: 12px;
+    font-size: 1.4rem;
+    color: #787878;
+}
+
+.select-input__icon {
+    margin-right: 12px;
+    font-size: 1.4rem;
+}
+
+.select-input:hover .select-input__list {
+    display: block;
+}
+
+.select-input__list {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 74%;
+    background: var(--while-color);
+    border-radius: 3px;
+    list-style: none;
+    padding: 10px 0;
+    box-shadow: 0 0.3125rem 0.625rem 0 rgb(0 0 0 / 5%);
+    display: none;
+    z-index: 1;
+
+}
+
+.select-input__list::after {
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 100%;
+    height: 10px;
+}
+
+.select-input__item {
+    padding: 9px 15px;
+}
+
+.select-input__link {
+    position: relative;
+    text-decoration: none;
+    color: #787878;
+    font-size: 1.4rem;
+    transition: right linear 0.1s;
+    right: 0;
+}
+.select-input__link:hover {
+    color: var(--primary-color);
+    right: -8px;
+}
+
+/* pagination */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
+.pagination-item {
+    margin: 0 15px;
+    
+}
+
+.pagination-item--acivate .pagination-item__link {
+    background-color: var(--primary-color);
+    color: var(--while-color);
+}
+
+.pagination-item--acivate .pagination-item__link:hover {
+    opacity: 0.9;
+}
+
+.pagination-item__link {
+    display: block;
+    min-width: 40px;
+    height: 30px;
+    font-size: 2rem;
+    text-decoration: none;
+    color: #989898;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 3px;
+}
+
+.pagination-item__icon {
+    font-size: 1.4rem;
+}
+
